@@ -11,14 +11,7 @@ This project implements a REST API for managing raw and assembled parts inventor
 ## Setup
 
 1. **Clone the repository**
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-3. **Configure MongoDB:**
-   - By default, connects to `mongodb+srv://hothikrishna2002:YDFXirEhQZrquyqv@cluster0.ki1gybq.mongodb.net/assembly_parts`.
-   - To use a different URI, set the `MONGO_URI` environment variable.
-4. **Run the server:**
+2. **Run the server:**
    ```bash
    npx ts-node-dev src/app.ts
    ```
@@ -52,5 +45,3 @@ This project implements a REST API for managing raw and assembled parts inventor
 - Atomic inventory updates using MongoDB transactions
 - Input validation and error handling
 
-## License
-MIT 
