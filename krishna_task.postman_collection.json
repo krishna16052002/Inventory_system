@@ -1,0 +1,595 @@
+{
+	"info": {
+		"_postman_id": "c491b26b-4f12-4a2d-8e50-3f93f6b6dd39",
+		"name": "krishna_task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30564825"
+	},
+	"item": [
+		{
+			"name": "Add Part",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Bolt\", \"type\": \"RAW\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/part",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"part"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:3000/api/part \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"name\": \"Bolt\", \"type\": \"RAW\"}'"
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"Bolt\", \"type\": \"RAW\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/part",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"part"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "82"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"52-pFGRVSe+Qi7zYvgSs7ZIxai3vow\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 25 Jul 2025 03:22:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Bolt\",\n    \"type\": \"RAW\",\n    \"quantity\": 0,\n    \"_id\": \"6882f87c3ff0d2d00a205de8\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Part",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/part/6882e4045996ebc2e3cbe765",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"part",
+						"6882e4045996ebc2e3cbe765"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/part/6882e4045996ebc2e3cbe765",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"part",
+								"6882e4045996ebc2e3cbe765"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-lb3bnSm+BOvN3dlHv/AqLutLhQo\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 25 Jul 2025 02:01:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Part deleted successfully.\"\n}"
+				},
+				{
+					"name": "Failed because this parts used in loop",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/part/6882e0a814f165e17ee786a6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"part",
+								"6882e0a814f165e17ee786a6"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "59"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3b-RAfVhahHkWo9xStDGRnP2STWY2w\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 25 Jul 2025 02:04:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Cannot delete part. It is used by: Assembled1\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Inverntory",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"parts\": [\n      { \"partId\": \"6882e0b414f165e17ee786a8\", \"quantity\": 5 }, //raw2\n      { \"partId\": \"6882e13114f165e17ee786b5\", \"quantity\": 1 }  //asseble 2\n    ]\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/part/inventory",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"part",
+						"inventory"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:3000/api/part/inventory \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"parts\": [\n      { \"partId\": \"662f1b2c3a4e5f6a7b8c9d0e\", \"quantity\": 5 },\n      { \"partId\": \"662f1b2c3a4e5f6a7b8c9d0f\", \"quantity\": 2 }\n    ]\n  }'"
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"parts\": [\n      { \"partId\": \"6882e0b414f165e17ee786a8\", \"quantity\": 5 }, //raw2\n      { \"partId\": \"6882e13114f165e17ee786b5\", \"quantity\": 1 }\n    ]\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/part/inventory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"part",
+								"inventory"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "146"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"92-VQQhcInUrQmzEgy3YKssMQj8A3Y\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 25 Jul 2025 04:47:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"SUCCESS\",\n    \"results\": [\n        {\n            \"partId\": \"6882e0b414f165e17ee786a8\",\n            \"status\": \"SUCCESS\"\n        },\n        {\n            \"partId\": \"6882e13114f165e17ee786b5\",\n            \"status\": \"SUCCESS\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Part",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"parts\": [\n      { \"id\": \"6882e14614f165e17ee786ba\", \"quantity\": 1 }\n    ]\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/part/6882e10c14f165e17ee786b1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"part",
+						"6882e10c14f165e17ee786b1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success response update Qualtity",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \n    \"quantity\" : 150\n    // \"parts\": [\n    //   { \"id\": \"6882e14614f165e17ee786ba\", \"quantity\": 1 }\n    // ]\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/part/6882e0a814f165e17ee786a6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"part",
+								"6882e0a814f165e17ee786a6"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "84"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"54-8QqLcytvAOYpTjoiOjcMDmSjoQ0\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 25 Jul 2025 04:50:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"6882e0a814f165e17ee786a6\",\n    \"name\": \"Raw1\",\n    \"type\": \"RAW\",\n    \"quantity\": 150,\n    \"__v\": 0\n}"
+				},
+				{
+					"name": "Success Parts",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \n    \"parts\": [\n      { \"id\": \"6882e0b414f165e17ee786a8\", \"quantity\": 1 }\n    ]\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/part/6882e3fe5996ebc2e3cbe760",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"part",
+								"6882e3fe5996ebc2e3cbe760"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "151"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"97-EUpKVCKYJ8bOlTvbXw4nRT5zmTc\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 25 Jul 2025 04:51:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"6882e3fe5996ebc2e3cbe760\",\n    \"name\": \"Assembled9\",\n    \"type\": \"ASSEMBLED\",\n    \"quantity\": 3,\n    \"parts\": [\n        {\n            \"id\": \"6882e0b414f165e17ee786a8\",\n            \"quantity\": 1\n        }\n    ],\n    \"__v\": 1\n}"
+				},
+				{
+					"name": "Circular dependency",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \n    \"parts\": [\n      { \"id\": \"6882e13114f165e17ee786b5\", \"quantity\": 1 }\n    ]\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/part/6882e10c14f165e17ee786b1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"part",
+								"6882e10c14f165e17ee786b1"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2b-BV0cBMxozVRUQLijCtK878AORaI\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 25 Jul 2025 04:54:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Circular dependency detected.\"\n}"
+				}
+			]
+		}
+	]
+}
