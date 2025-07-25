@@ -1,0 +1,15 @@
+export const MESSAGES = {
+  NAME_TYPE_REQUIRED: "Name and type are required.",
+  INVALID_PART_TYPE: "Invalid part type.",
+  ASSEMBLED_PARTS_REQUIRED: "Assembled parts must have constituent parts.",
+  CIRCULAR_DEPENDENCY: "Circular dependency detected.",
+  PART_NAME_UNIQUE: "Part name must be unique.",
+  PART_NOT_FOUND: "Part not found.",
+  QUANTITY_POSITIVE: "Quantity must be positive.",
+  INSUFFICIENT_QUANTITY: (ids: string[]) => `Insufficient quantity - ${ids.join(', ')}`,
+  PART_USED_BY: (names: string) => `Cannot delete part. It is used by: ${names}`,
+  PART_DELETED: "Part deleted successfully.",
+  STATUS_SUCCESS: "SUCCESS",
+  STATUS_FAILED: "FAILED",
+  SERVER_ERROR: "Server error",
+}; 
