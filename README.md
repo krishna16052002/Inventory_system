@@ -45,5 +45,3 @@ This project implements a REST API for managing raw and assembled parts inventor
 - Atomic inventory updates using MongoDB transactions
 - Input validation and error handling
 
-## License
-MIT 
