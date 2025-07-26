@@ -1,9 +1,10 @@
 import { Schema, model, Document, Model, Types } from 'mongoose';
 
-export type PartType = 'RAW' | 'ASSEMBLED';
+export const PART_TYPES = ['RAW', 'ASSEMBLED'] as const;
+export type PartType = typeof PART_TYPES[number];
 
 export interface IConstituentPart {
-  id: Types.ObjectId; 
+  id: Types.ObjectId;
   quantity: number;
 }
 
@@ -18,11 +19,11 @@ export interface IPart extends Document {
 const ConstituentPartSchema = new Schema<IConstituentPart>({
   id: { type: Schema.Types.ObjectId, ref: 'Part', required: true },
   quantity: { type: Number, required: true, min: 1 },
-}, { _id: false }); 
+}, { _id: false });
 
 const PartSchema = new Schema<IPart>({
   name: { type: String, required: true, unique: true },
-  type: { type: String, enum: ['RAW', 'ASSEMBLED'], required: true },
+  type: { type: String, enum: PART_TYPES, required: true },
   quantity: { type: Number, default: 0, min: 0 },
   parts: {
     type: [ConstituentPartSchema],
@@ -31,11 +32,14 @@ const PartSchema = new Schema<IPart>({
   },
 });
 
-interface PartModelType extends Model<IPart> {
+export interface PartModelType extends Model<IPart> {
   hasCircularDependency(partId: string, parts: IConstituentPart[]): Promise<boolean>;
 }
 
-PartSchema.statics.hasCircularDependency = async function (partId: string, parts: IConstituentPart[]): Promise<boolean> {
+PartSchema.statics.hasCircularDependency = async function (
+  partId: string,
+  parts: IConstituentPart[]
+): Promise<boolean> {
   const visited = new Set<string>();
   const model = this as PartModelType;
   async function dfs(currentId: string): Promise<boolean> {
